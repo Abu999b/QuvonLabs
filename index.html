@@ -17,6 +17,8 @@ html { scroll-behavior: smooth; }
   --orange: #f96b1a;
   --amber:  #ffb020;
   --green:  #00b87a;
+  --purple: #7c3aed;
+  --red:    #ef4444;
   --ink:    #0d1b35;
   --muted:  #5c6b84;
   --light:  #f4f7fc;
@@ -64,6 +66,26 @@ a { text-decoration: none; }
 .btn-orange:hover   { background: #df5c0e; box-shadow: 0 6px 22px rgba(249,107,26,.38); }
 .btn-ghost    { background: transparent; color: rgba(255,255,255,.7); border: 1.5px solid rgba(255,255,255,.18); }
 .btn-ghost:hover    { border-color: rgba(255,255,255,.4); color: #fff; }
+.btn-schedule {
+  background: rgba(26,95,255,.08);
+  color: var(--blue);
+  border: 1.5px solid rgba(26,95,255,.2);
+  font-size: 0.82rem;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.btn-schedule:hover {
+  background: rgba(26,95,255,.14);
+  border-color: rgba(26,95,255,.4);
+  transform: translateY(-1px);
+}
 .btn-sm { padding: 8px 18px; font-size: 0.82rem; }
 .btn-full { width: 100%; }
 
@@ -153,7 +175,6 @@ a { text-decoration: none; }
   align-items: center;
 }
 
-/* Eyebrow */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
@@ -182,7 +203,6 @@ a { text-decoration: none; }
 
 .hero-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 44px; }
 
-/* Stats */
 .hero-stats {
   display: flex; gap: 0;
   padding-top: 30px; border-top: 1px solid rgba(255,255,255,.09);
@@ -196,7 +216,6 @@ a { text-decoration: none; }
 .hstat-n .a { color: var(--amber); font-size: 1.2rem; }
 .hstat-l { font-size: 0.68rem; color: rgba(255,255,255,.38); font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; }
 
-/* Hero card */
 .hero-card {
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.13);
@@ -260,6 +279,17 @@ a { text-decoration: none; }
 ─────────────────────────────── */
 .courses-sec { background: var(--white); padding: 76px 0; }
 
+/* Section header row with schedule button */
+.sec-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+.sec-head-row .sec-head { margin-bottom: 0; }
+
 .course-card {
   background: var(--light);
   border: 1.5px solid var(--line);
@@ -269,7 +299,6 @@ a { text-decoration: none; }
 }
 .course-card:hover { box-shadow: 0 16px 52px rgba(11,29,58,.09); }
 
-/* Notification bar */
 .notif {
   background: var(--navy);
   display: flex; align-items: center; gap: 10px;
@@ -287,12 +316,10 @@ a { text-decoration: none; }
   text-transform: uppercase; padding: 3px 11px; border-radius: 5px; white-space: nowrap;
 }
 
-/* Two-column layout */
 .course-cols { display: grid; grid-template-columns: 1fr 256px; }
 
 .course-main { padding: 30px 30px 26px; border-right: 1.5px solid var(--line); }
 
-/* Header row */
 .course-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 
 .c-ico {
@@ -320,7 +347,6 @@ a { text-decoration: none; }
   line-height: 1.78; margin-bottom: 22px; max-width: 440px;
 }
 
-/* Learn list */
 .learn-label {
   font-size: 0.67rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.1em; color: var(--muted); margin-bottom: 9px;
@@ -332,7 +358,6 @@ a { text-decoration: none; }
   color: var(--ink); padding: 5px 12px; border-radius: 6px;
 }
 
-/* Sub-courses */
 .subcourses { display: flex; flex-direction: column; gap: 9px; }
 .sc {
   display: flex; align-items: flex-start; gap: 12px;
@@ -350,7 +375,6 @@ a { text-decoration: none; }
 .sc-name { font-size: 0.84rem; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
 .sc-desc { font-size: 0.74rem; color: var(--muted); line-height: 1.5; }
 
-/* Details sidebar */
 .course-side {
   padding: 28px 22px;
   display: flex; flex-direction: column;
@@ -369,7 +393,6 @@ a { text-decoration: none; }
 .dv-green  { color: var(--green); }
 .dv-sm     { font-size: 0.82rem; }
 
-/* Price */
 .price-wrap { margin-top: auto; padding-top: 18px; }
 .p-old { font-size: 0.86rem; color: var(--muted); text-decoration: line-through; margin-bottom: 2px; }
 .p-new { font-family: 'Syne', sans-serif; font-size: 2rem; color: var(--ink); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
@@ -433,7 +456,6 @@ a { text-decoration: none; }
 .ci-lbl { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,.38); margin-bottom: 3px; }
 .ci-val { font-size: 0.94rem; font-weight: 700; color: #fff; line-height: 1.4; }
 
-/* CTA box */
 .cta-box {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.1);
@@ -450,42 +472,13 @@ a { text-decoration: none; }
   font-size: 0.8rem; color: rgba(255,255,255,.4); text-align: center;
 }
 .cta-deadline strong { color: var(--amber); }
-.nav-brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  gap: 12px;
-}
 
-.logo-hex {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.brand-name {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.brand-tag {
-  font-size: 12px;
-  color: #777;
-}
+.nav-brand { display: flex; align-items: center; text-decoration: none; gap: 12px; }
+.logo-hex { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+.logo-img { width: 100%; height: 100%; object-fit: contain; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-name { font-size: 20px; font-weight: 600; }
+.brand-tag { font-size: 12px; color: #777; }
 
 /* ───────────────────────────────
    FOOTER
@@ -504,6 +497,177 @@ footer { background: #060e1d; padding: 18px 0; }
 .foot-links a:hover { color: rgba(255,255,255,.7); }
 
 /* ───────────────────────────────
+   SCHEDULE MODAL
+─────────────────────────────── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(7,14,30,.72);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 24px 16px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+  overflow-y: auto;
+}
+.modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 20px;
+  width: 100%; max-width: 820px;
+  box-shadow: 0 40px 100px rgba(7,14,30,.35);
+  overflow: hidden;
+  transform: translateY(24px) scale(0.98);
+  transition: transform 0.3s ease;
+  margin: auto;
+}
+.modal-overlay.open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  background: var(--navy);
+  padding: 24px 28px 20px;
+  position: sticky; top: 0; z-index: 10;
+}
+.modal-header-top {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  margin-bottom: 16px;
+}
+.modal-title-group {}
+.modal-eyebrow {
+  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,.4); margin-bottom: 4px;
+}
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem; color: #fff; letter-spacing: -0.02em; line-height: 1.2;
+}
+.modal-close {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.6); font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s; flex-shrink: 0;
+}
+.modal-close:hover { background: rgba(255,255,255,.16); color: #fff; }
+
+/* Phase tabs */
+.phase-tabs {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.phase-tab {
+  font-size: 0.7rem; font-weight: 700; padding: 5px 14px; border-radius: 6px;
+  cursor: pointer; border: none; font-family: inherit;
+  background: rgba(255,255,255,.06); color: rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.1);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.phase-tab.active { color: #fff; }
+.phase-tab[data-phase="1"].active { background: rgba(26,95,255,.4); border-color: rgba(26,95,255,.6); }
+.phase-tab[data-phase="2"].active { background: rgba(26,160,255,.4); border-color: rgba(26,160,255,.6); }
+.phase-tab[data-phase="3"].active { background: rgba(124,58,237,.4); border-color: rgba(124,58,237,.6); }
+.phase-tab[data-phase="4"].active { background: rgba(239,68,68,.4); border-color: rgba(239,68,68,.6); }
+
+/* Modal body */
+.modal-body { padding: 0; }
+
+/* Phase panel */
+.phase-panel { display: none; padding: 24px 28px 28px; }
+.phase-panel.active { display: block; }
+
+.phase-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; border-radius: 12px;
+  margin-bottom: 18px;
+}
+.phase-1-hdr { background: rgba(26,95,255,.07); border: 1px solid rgba(26,95,255,.15); }
+.phase-2-hdr { background: rgba(26,160,255,.07); border: 1px solid rgba(26,160,255,.15); }
+.phase-3-hdr { background: rgba(124,58,237,.07); border: 1px solid rgba(124,58,237,.18); }
+.phase-4-hdr { background: rgba(239,68,68,.07); border: 1px solid rgba(239,68,68,.15); }
+
+.phase-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+.dot-blue   { background: var(--blue); }
+.dot-cyan   { background: #1aa0ff; }
+.dot-purple { background: var(--purple); }
+.dot-red    { background: var(--red); }
+
+.phase-hdr-text {}
+.phase-hdr-name {
+  font-family: 'Syne', sans-serif; font-size: 0.95rem; line-height: 1.2;
+}
+.phase-1-hdr .phase-hdr-name { color: var(--blue); }
+.phase-2-hdr .phase-hdr-name { color: #1aa0ff; }
+.phase-3-hdr .phase-hdr-name { color: var(--purple); }
+.phase-4-hdr .phase-hdr-name { color: var(--red); }
+
+.phase-hdr-range {
+  font-size: 0.7rem; color: var(--muted); margin-top: 1px;
+}
+
+/* Day grid */
+.day-list {
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+.day-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; border-radius: 10px;
+  background: var(--light); border: 1px solid var(--line);
+  transition: background 0.15s, border-color 0.15s;
+}
+.day-row:hover { background: #edf2fb; border-color: #c8d6ee; }
+
+.day-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem; font-weight: 800;
+  min-width: 36px; color: var(--muted); flex-shrink: 0;
+}
+.day-1 .day-num   { color: var(--blue); }
+.day-2 .day-num   { color: #1aa0ff; }
+.day-3 .day-num   { color: var(--purple); }
+.day-4 .day-num   { color: var(--red); }
+
+.day-info { flex: 1; min-width: 0; }
+.day-topic {
+  font-size: 0.84rem; font-weight: 700; color: var(--ink); line-height: 1.3;
+}
+.day-lc {
+  font-size: 0.71rem; color: var(--muted); margin-top: 2px;
+  display: flex; align-items: center; gap: 5px;
+}
+.lc-badge {
+  font-size: 0.63rem; font-weight: 700; padding: 1px 7px;
+  background: rgba(249,107,26,.09); color: #c04e0a;
+  border-radius: 4px; letter-spacing: 0.02em;
+}
+.day-lc a {
+  color: var(--blue); font-weight: 600; text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.day-special {
+  background: linear-gradient(135deg, rgba(255,176,32,.08), rgba(249,107,26,.07));
+  border-color: rgba(249,107,26,.2);
+}
+.day-special .day-topic { color: var(--orange); }
+
+/* Modal progress bar */
+.modal-progress {
+  height: 3px; background: var(--line);
+  position: relative; overflow: hidden;
+}
+.modal-progress-bar {
+  position: absolute; left: 0; top: 0; height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  transition: width 0.4s ease;
+}
+
+/* ───────────────────────────────
    RESPONSIVE
 ─────────────────────────────── */
 @media (max-width: 860px) {
@@ -513,6 +677,7 @@ footer { background: #060e1d; padding: 18px 0; }
   .course-main  { border-right: none; border-bottom: 1.5px solid var(--line); }
   .why-grid     { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+  .sec-head-row { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 560px) {
@@ -523,6 +688,8 @@ footer { background: #060e1d; padding: 18px 0; }
   .course-side   { padding: 22px 18px; }
   .notif         { padding: 9px 16px; }
   .nav-phone span.phone-label { display: none; }
+  .modal-header  { padding: 18px 18px 16px; }
+  .phase-panel   { padding: 18px 18px 24px; }
 }
 </style>
 </head>
@@ -535,10 +702,8 @@ footer { background: #060e1d; padding: 18px 0; }
 
      <a href="#" class="nav-brand">
   <div class="logo-hex">
-    <!-- Replace SVG + Q with your logo -->
     <img src="/raju.jpg" alt="Quvon Labs Logo" class="logo-img">
   </div>
-
   <div class="brand-text">
     <span class="brand-name">Quvon <em>Labs</em></span>
     <span class="brand-tag">Learn · Code · Grow</span>
@@ -557,7 +722,7 @@ footer { background: #060e1d; padding: 18px 0; }
 </nav>
 
 
-<!-- ══ HERO — WHAT IS QUVON LABS ══ -->
+<!-- ══ HERO ══ -->
 <section class="hero" id="about">
   <div class="hero-dots"></div>
   <div class="container">
@@ -639,10 +804,16 @@ footer { background: #060e1d; padding: 18px 0; }
 <section class="courses-sec" id="courses">
   <div class="container">
 
-    <div class="sec-head reveal">
-      <div class="sec-tag">Available Courses</div>
-      <h2 class="sec-title">Summer Coding Classes 2026</h2>
-      <p class="sec-sub">One programme, three focused modules — from Java fundamentals to interview-ready problem solving.</p>
+    <!-- Section header + schedule button row -->
+    <div class="sec-head-row reveal">
+      <div class="sec-head">
+        <div class="sec-tag">Available Courses</div>
+        <h2 class="sec-title">Summer Coding Classes 2026</h2>
+        <p class="sec-sub">One programme, three focused modules — from Java fundamentals to interview-ready problem solving.</p>
+      </div>
+      <button class="btn-schedule" id="openScheduleBtn" onclick="openModal()">
+        📅 View Course Schedule
+      </button>
     </div>
 
     <div class="course-card reveal">
@@ -655,7 +826,6 @@ footer { background: #060e1d; padding: 18px 0; }
 
       <div class="course-cols">
 
-        <!-- Main content -->
         <div class="course-main">
 
           <div class="course-header">
@@ -707,7 +877,6 @@ footer { background: #060e1d; padding: 18px 0; }
 
         </div>
 
-        <!-- Side details -->
         <div class="course-side">
 
           <div class="dg">
@@ -880,7 +1049,89 @@ footer { background: #060e1d; padding: 18px 0; }
   </div>
 </footer>
 
+
+<!-- ══ SCHEDULE MODAL ══ -->
+<div class="modal-overlay" id="scheduleModal" onclick="handleOverlayClick(event)">
+  <div class="modal">
+
+    <div class="modal-header">
+      <div class="modal-header-top">
+        <div class="modal-title-group">
+          <div class="modal-eyebrow">90-Day Course Roadmap</div>
+          <div class="modal-title">📅 Full Course Schedule</div>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+
+      <div class="phase-tabs">
+        <button class="phase-tab active" data-phase="1" onclick="switchPhase(1)">🟢 Phase 1 · Days 1–20</button>
+        <button class="phase-tab" data-phase="2" onclick="switchPhase(2)">🔵 Phase 2 · Days 21–50</button>
+        <button class="phase-tab" data-phase="3" onclick="switchPhase(3)">🟣 Phase 3 · Days 51–80</button>
+        <button class="phase-tab" data-phase="4" onclick="switchPhase(4)">🔴 Phase 4 · Days 81–90</button>
+      </div>
+    </div>
+
+    <div class="modal-progress">
+      <div class="modal-progress-bar" id="progressBar" style="width:25%"></div>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- PHASE 1 -->
+      <div class="phase-panel active" id="phase-1">
+        <div class="phase-header phase-1-hdr">
+          <div class="phase-dot dot-blue"></div>
+          <div class="phase-hdr-text">
+            <div class="phase-hdr-name">Phase 1 — Java Basics</div>
+            <div class="phase-hdr-range">Day 1 to Day 20 · Foundation Building</div>
+          </div>
+        </div>
+        <div class="day-list" id="days-phase-1"></div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase-panel" id="phase-2">
+        <div class="phase-header phase-2-hdr">
+          <div class="phase-dot dot-cyan"></div>
+          <div class="phase-hdr-text">
+            <div class="phase-hdr-name">Phase 2 — Intermediate DSA</div>
+            <div class="phase-hdr-range">Day 21 to Day 50 · Core Data Structures</div>
+          </div>
+        </div>
+        <div class="day-list" id="days-phase-2"></div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase-panel" id="phase-3">
+        <div class="phase-header phase-3-hdr">
+          <div class="phase-dot dot-purple"></div>
+          <div class="phase-hdr-text">
+            <div class="phase-hdr-name">Phase 3 — Trees + Hashing</div>
+            <div class="phase-hdr-range">Day 51 to Day 80 · Advanced Structures</div>
+          </div>
+        </div>
+        <div class="day-list" id="days-phase-3"></div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="phase-panel" id="phase-4">
+        <div class="phase-header phase-4-hdr">
+          <div class="phase-dot dot-red"></div>
+          <div class="phase-hdr-text">
+            <div class="phase-hdr-name">Phase 4 — Advanced + Mocks</div>
+            <div class="phase-hdr-range">Day 81 to Day 90 · Interview Readiness 🎯</div>
+          </div>
+        </div>
+        <div class="day-list" id="days-phase-4"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <script>
+/* ── Reveal animation ── */
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
@@ -890,6 +1141,160 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── Schedule data ── */
+const schedule = {
+  1: [
+    { day: 1,  topic: "Introduction to Java",       lc: "1480, 1920" },
+    { day: 2,  topic: "Variables & Input/Output",    lc: "1512, 1108" },
+    { day: 3,  topic: "Data Types & Operators",      lc: "2235, 2114" },
+    { day: 4,  topic: "If-Else",                     lc: "2011, 1672" },
+    { day: 5,  topic: "Switch Statements",           lc: "1313, 1528" },
+    { day: 6,  topic: "Loops (for, while)",          lc: "412, 1342" },
+    { day: 7,  topic: "Nested Loops",                lc: "1822, 1295" },
+    { day: 8,  topic: "Pattern Problems (Basic)",    lc: "1773, 1662" },
+    { day: 9,  topic: "Pattern Problems (Advanced)", lc: "1832, 2119" },
+    { day: 10, topic: "Functions & Methods",         lc: "1281, 2520" },
+    { day: 11, topic: "Function Practice",           lc: "2469, 509" },
+    { day: 12, topic: "Time Complexity",             lc: "136, 268" },
+    { day: 13, topic: "Arrays Intro",                lc: "1, 217" },
+    { day: 14, topic: "Array Traversal",             lc: "53, 121" },
+    { day: 15, topic: "Array Manipulation",          lc: "26, 88" },
+    { day: 16, topic: "2D Arrays",                   lc: "867, 1572" },
+    { day: 17, topic: "Strings",                     lc: "125, 344" },
+    { day: 18, topic: "StringBuilder",               lc: "541, 557" },
+    { day: 19, topic: "Bit Manipulation",            lc: "191, 338" },
+    { day: 20, topic: "Revision + Test",             lc: null, special: true },
+  ],
+  2: [
+    { day: 21, topic: "Sorting Intro",               lc: "912, 977" },
+    { day: 22, topic: "Bubble/Selection Sort",       lc: "75, 905" },
+    { day: 23, topic: "Insertion Sort",              lc: "349, 414" },
+    { day: 24, topic: "Recursion Basics",            lc: "509, 70" },
+    { day: 25, topic: "Recursion Advanced",          lc: "1137, 198" },
+    { day: 26, topic: "Recursion Patterns",          lc: "46, 78" },
+    { day: 27, topic: "Subsets",                     lc: "90, 78" },
+    { day: 28, topic: "Permutations",                lc: "46, 47" },
+    { day: 29, topic: "Backtracking Intro",          lc: "39, 40" },
+    { day: 30, topic: "N Queens",                    lc: "51, 52" },
+    { day: 31, topic: "Sudoku",                      lc: "37, 79" },
+    { day: 32, topic: "Merge Sort",                  lc: "148, 912" },
+    { day: 33, topic: "Quick Sort",                  lc: "215, 973" },
+    { day: 34, topic: "OOP Concepts",                lc: "146, 155" },
+    { day: 35, topic: "ArrayList",                   lc: "225, 232" },
+    { day: 36, topic: "Collections Framework",       lc: "20, 496" },
+    { day: 37, topic: "Stack",                       lc: "155, 739" },
+    { day: 38, topic: "Queue",                       lc: "232, 622" },
+    { day: 39, topic: "Deque",                       lc: "641, 933" },
+    { day: 40, topic: "Revision",                    lc: null, special: true },
+    { day: 41, topic: "Linked List Intro",           lc: "206, 21" },
+    { day: 42, topic: "Reverse LL",                  lc: "206, 92" },
+    { day: 43, topic: "Cycle Detection",             lc: "141, 142" },
+    { day: 44, topic: "Middle Node",                 lc: "876, 160" },
+    { day: 45, topic: "Remove Nodes",                lc: "19, 237" },
+    { day: 46, topic: "Doubly LL",                   lc: "430, 147" },
+    { day: 47, topic: "Circular LL",                 lc: "708, 138" },
+    { day: 48, topic: "LL Practice",                 lc: "83, 82" },
+    { day: 49, topic: "LL Advanced",                 lc: "143, 234" },
+    { day: 50, topic: "Revision",                    lc: null, special: true },
+  ],
+  3: [
+    { day: 51, topic: "Binary Tree Intro",           lc: "104, 100" },
+    { day: 52, topic: "Tree Traversals",             lc: "144, 145" },
+    { day: 53, topic: "Level Order",                 lc: "102, 107" },
+    { day: 54, topic: "Tree Depth",                  lc: "104, 111" },
+    { day: 55, topic: "Balanced Tree",               lc: "110, 101" },
+    { day: 56, topic: "Binary Search Tree",          lc: "98, 700" },
+    { day: 57, topic: "Insert BST",                  lc: "701, 450" },
+    { day: 58, topic: "LCA",                         lc: "235, 236" },
+    { day: 59, topic: "Path Problems",               lc: "112, 113" },
+    { day: 60, topic: "Tree Practice",               lc: null, special: true },
+    { day: 61, topic: "HashSet",                     lc: "217, 349" },
+    { day: 62, topic: "HashMap",                     lc: "1, 242" },
+    { day: 63, topic: "Frequency Problems",          lc: "451, 347" },
+    { day: 64, topic: "Subarray Sum",                lc: "560, 974" },
+    { day: 65, topic: "Sliding Window",              lc: "3, 567" },
+    { day: 66, topic: "Two Pointers",                lc: "167, 11" },
+    { day: 67, topic: "Prefix Sum",                  lc: "724, 303" },
+    { day: 68, topic: "Greedy Intro",                lc: "455, 135" },
+    { day: 69, topic: "Greedy Advanced",             lc: "134, 122" },
+    { day: 70, topic: "Revision",                    lc: null, special: true },
+    { day: 71, topic: "Heap / Priority Queue",       lc: "215, 703" },
+    { day: 72, topic: "Heap Practice",               lc: "347, 1046" },
+    { day: 73, topic: "Trie Intro",                  lc: "208, 211" },
+    { day: 74, topic: "Trie Advanced",               lc: "212, 648" },
+    { day: 75, topic: "Trie Practice",               lc: null, special: true },
+    { day: 76, topic: "Graph Intro",                 lc: "200, 695" },
+    { day: 77, topic: "BFS",                         lc: "994, 1091" },
+    { day: 78, topic: "DFS",                         lc: "133, 547" },
+    { day: 79, topic: "Topological Sort",            lc: "207, 210" },
+    { day: 80, topic: "Graph Practice",              lc: null, special: true },
+  ],
+  4: [
+    { day: 81, topic: "DP Intro",                    lc: "70, 198" },
+    { day: 82, topic: "DP Advanced",                 lc: "322, 300" },
+    { day: 83, topic: "DP Grid",                     lc: "62, 64" },
+    { day: 84, topic: "DP Strings",                  lc: "1143, 516" },
+    { day: 85, topic: "DP Practice",                 lc: null, special: true },
+    { day: 86, topic: "Mock Test 1 🧪",              lc: null, special: true },
+    { day: 87, topic: "Mock Test 2 🧪",              lc: null, special: true },
+    { day: 88, topic: "Mock Test 3 🧪",              lc: null, special: true },
+    { day: 89, topic: "Weak Areas Revision",         lc: null, special: true },
+    { day: 90, topic: "Final Contest 🎯",            lc: null, special: true },
+  ]
+};
+
+/* ── Render days ── */
+function lcLinks(lcStr) {
+  if (!lcStr) return '';
+  const nums = lcStr.split(',').map(s => s.trim());
+  const links = nums.map(n =>
+    `<a href="https://leetcode.com/problems/?search=${n}" target="_blank" rel="noopener">${n}</a>`
+  ).join(', ');
+  return `<span class="lc-badge">LC</span> ${links}`;
+}
+
+function renderDays() {
+  for (const [phase, days] of Object.entries(schedule)) {
+    const container = document.getElementById(`days-phase-${phase}`);
+    container.innerHTML = days.map(d => `
+      <div class="day-row day-${phase} ${d.special ? 'day-special' : ''}">
+        <div class="day-num">D${d.day}</div>
+        <div class="day-info">
+          <div class="day-topic">${d.topic}</div>
+          ${d.lc ? `<div class="day-lc">${lcLinks(d.lc)}</div>` : ''}
+        </div>
+      </div>
+    `).join('');
+  }
+}
+renderDays();
+
+/* ── Modal open/close ── */
+function openModal() {
+  document.getElementById('scheduleModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('scheduleModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('scheduleModal')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ── Phase switching ── */
+const progressWidths = { 1: '25%', 2: '50%', 3: '75%', 4: '100%' };
+function switchPhase(p) {
+  document.querySelectorAll('.phase-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.phase-panel').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.phase-tab[data-phase="${p}"]`).classList.add('active');
+  document.getElementById(`phase-${p}`).classList.add('active');
+  document.getElementById('progressBar').style.width = progressWidths[p];
+  // scroll modal body to top
+  document.querySelector('.modal-body').scrollTop = 0;
+}
 </script>
 </body>
 </html>
