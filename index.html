@@ -66,6 +66,26 @@ a { text-decoration: none; }
 .btn-orange:hover   { background: #df5c0e; box-shadow: 0 6px 22px rgba(249,107,26,.38); }
 .btn-ghost    { background: transparent; color: rgba(255,255,255,.7); border: 1.5px solid rgba(255,255,255,.18); }
 .btn-ghost:hover    { border-color: rgba(255,255,255,.4); color: #fff; }
+.btn-register {
+  background: linear-gradient(135deg, var(--green), #00d48c);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,184,122,.3);
+  font-size: 0.86rem;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-register:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0,184,122,.45);
+}
 .btn-schedule {
   background: rgba(26,95,255,.08);
   color: var(--blue);
@@ -144,6 +164,21 @@ a { text-decoration: none; }
   background: var(--green);
   box-shadow: 0 0 0 2px rgba(0,184,122,.2);
   flex-shrink: 0;
+}
+
+.nav-register {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.82rem; font-weight: 700; color: #fff;
+  background: var(--green);
+  border-radius: 8px; padding: 7px 16px;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(0,184,122,.3);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.nav-register:hover {
+  background: #009e68;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(0,184,122,.4);
 }
 
 /* ───────────────────────────────
@@ -251,6 +286,19 @@ a { text-decoration: none; }
 .hcard-name { font-size: 0.85rem; font-weight: 700; color: #fff; }
 .hcard-sub  { font-size: 0.7rem; color: rgba(255,255,255,.38); margin-top: 1px; }
 
+/* Hero register banner */
+.hero-register-banner {
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: rgba(0,184,122,.1);
+  border: 1px solid rgba(0,184,122,.25);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap;
+}
+.hrb-text { font-size: 0.78rem; color: rgba(255,255,255,.65); line-height: 1.4; }
+.hrb-text strong { color: #4dddb0; }
+
 /* ───────────────────────────────
    SECTION HEADER
 ─────────────────────────────── */
@@ -279,7 +327,6 @@ a { text-decoration: none; }
 ─────────────────────────────── */
 .courses-sec { background: var(--white); padding: 76px 0; }
 
-/* Section header row with schedule button */
 .sec-head-row {
   display: flex;
   align-items: flex-end;
@@ -402,6 +449,16 @@ a { text-decoration: none; }
   border-radius: 5px; padding: 3px 9px; margin-bottom: 14px;
 }
 
+/* Register online divider */
+.or-divider {
+  display: flex; align-items: center; gap: 10px;
+  margin: 10px 0;
+}
+.or-divider::before, .or-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--line);
+}
+.or-divider span { font-size: 0.68rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
 /* ───────────────────────────────
    WHY
 ─────────────────────────────── */
@@ -473,8 +530,30 @@ a { text-decoration: none; }
 }
 .cta-deadline strong { color: var(--amber); }
 
+.cta-or-divider {
+  display: flex; align-items: center; gap: 10px;
+  margin: 14px 0;
+}
+.cta-or-divider::before, .cta-or-divider::after {
+  content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1);
+}
+.cta-or-divider span { font-size: 0.68rem; color: rgba(255,255,255,.3); font-weight: 600; }
+
+.btn-register-dark {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  width: 100%; font-family: inherit; font-size: 0.86rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--green), #00d48c);
+  color: #fff; border: none; border-radius: 8px; padding: 13px 0;
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0,184,122,.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-register-dark:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0,184,122,.5);
+}
+
 .nav-brand { display: flex; align-items: center; text-decoration: none; gap: 12px; }
-.logo-hex { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
 .logo-img { width: 100%; height: 100%; object-fit: contain; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-name { font-size: 20px; font-weight: 600; }
@@ -667,6 +746,16 @@ footer { background: #060e1d; padding: 18px 0; }
   transition: width 0.4s ease;
 }
 
+/* Modal register CTA at bottom */
+.modal-register-cta {
+  padding: 20px 28px 24px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(0,184,122,.04), rgba(26,95,255,.04));
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.mrc-text { font-size: 0.84rem; color: var(--muted); line-height: 1.45; }
+.mrc-text strong { color: var(--ink); }
+
 /* ───────────────────────────────
    RESPONSIVE
 ─────────────────────────────── */
@@ -690,6 +779,8 @@ footer { background: #060e1d; padding: 18px 0; }
   .nav-phone span.phone-label { display: none; }
   .modal-header  { padding: 18px 18px 16px; }
   .phase-panel   { padding: 18px 18px 24px; }
+  .modal-register-cta { flex-direction: column; align-items: stretch; }
+  .nav-register span.reg-label { display: none; }
 }
 </style>
 </head>
@@ -714,6 +805,9 @@ footer { background: #060e1d; padding: 18px 0; }
         <a href="tel:9392648991" class="nav-phone">
           <span class="phone-dot"></span>
           <span class="phone-label">9392648991</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" class="nav-register">
+          ✍️ <span class="reg-label">Register Now</span>
         </a>
       </div>
 
@@ -742,6 +836,7 @@ footer { background: #060e1d; padding: 18px 0; }
         </p>
 
         <div class="hero-ctas">
+          <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" class="btn btn-register">✍️ Register Online</a>
           <a href="#courses" class="btn btn-orange">View Courses</a>
           <a href="#contact" class="btn btn-ghost">Contact Us</a>
         </div>
@@ -792,6 +887,11 @@ footer { background: #060e1d; padding: 18px 0; }
             </div>
             <span class="hbadge hb-orange">Hot</span>
           </div>
+          <!-- Register banner inside hero card -->
+          <div class="hero-register-banner">
+            <div class="hrb-text">Seats filling fast — <strong>Register by 18th May</strong></div>
+            <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:700;color:#4dddb0;white-space:nowrap;text-decoration:none;border-bottom:1px solid rgba(77,221,176,.3);padding-bottom:1px;">Register Now →</a>
+          </div>
         </div>
       </div>
 
@@ -804,16 +904,20 @@ footer { background: #060e1d; padding: 18px 0; }
 <section class="courses-sec" id="courses">
   <div class="container">
 
-    <!-- Section header + schedule button row -->
     <div class="sec-head-row reveal">
       <div class="sec-head">
         <div class="sec-tag">Available Courses</div>
         <h2 class="sec-title">Summer Coding Classes 2026</h2>
         <p class="sec-sub">One programme, three focused modules — from Java fundamentals to interview-ready problem solving.</p>
       </div>
-      <button class="btn-schedule" id="openScheduleBtn" onclick="openModal()">
-        📅 View Course Schedule
-      </button>
+      <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;">
+        <button class="btn-schedule" id="openScheduleBtn" onclick="openModal()">
+          📅 View Course Schedule
+        </button>
+        <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" class="btn-register" style="font-size:0.82rem;padding:8px 18px;">
+          ✍️ Register Online
+        </a>
+      </div>
     </div>
 
     <div class="course-card reveal">
@@ -912,7 +1016,9 @@ footer { background: #060e1d; padding: 18px 0; }
             <div class="p-old">₹4,000</div>
             <div class="p-new">₹3,000</div>
             <div class="p-save">Save ₹1,000</div>
-            <a href="tel:9392648991" class="btn btn-orange btn-full">Enroll Now</a>
+            <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" class="btn btn-register btn-full" style="padding:11px 0;font-size:0.86rem;">✍️ Register Online</a>
+            <div class="or-divider"><span>or</span></div>
+            <a href="tel:9392648991" class="btn btn-orange btn-full">📞 Call to Enroll</a>
           </div>
 
         </div>
@@ -1004,14 +1110,26 @@ footer { background: #060e1d; padding: 18px 0; }
               <div class="ci-val">7:00 PM – 8:30 PM Daily</div>
             </div>
           </div>
+          <div class="ci">
+            <div class="ci-ico">📝</div>
+            <div>
+              <div class="ci-lbl">Online Registration</div>
+              <div class="ci-val">
+                <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" style="color:#4dddb0;text-decoration:underline;text-underline-offset:3px;">Fill Registration Form →</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="reveal">
         <div class="cta-box">
-          <div class="cta-label">Call or WhatsApp to enroll</div>
+          <div class="cta-label">Register online instantly</div>
+          <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" class="btn-register-dark">✍️ Fill Registration Form</a>
+          <div class="cta-or-divider"><span>or call us</span></div>
+          <div class="cta-label" style="margin-bottom:5px;">Call or WhatsApp to enroll</div>
           <div class="cta-num">9392648991</div>
-          <a href="tel:9392648991" class="btn btn-orange btn-full" style="padding:13px 0;">Call Now to Enroll</a>
+          <a href="tel:9392648991" class="btn btn-orange btn-full" style="padding:13px 0;">📞 Call Now to Enroll</a>
           <a href="#courses" class="btn btn-ghost btn-full" style="margin-top:10px;font-size:0.84rem;">Browse Courses</a>
           <div class="cta-deadline">
             Registration closes <strong>18th May 2026</strong> — seats are limited
@@ -1044,6 +1162,7 @@ footer { background: #060e1d; padding: 18px 0; }
         <a href="#courses">Courses</a>
         <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
+        <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" style="color:var(--green);">Register</a>
       </div>
     </div>
   </div>
@@ -1126,6 +1245,16 @@ footer { background: #060e1d; padding: 18px 0; }
       </div>
 
     </div>
+
+    <!-- Modal register CTA -->
+    <div class="modal-register-cta">
+      <div class="mrc-text"><strong>Ready to join?</strong> Register online or call us before seats fill up.</div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;">
+        <a href="https://docs.google.com/forms/d/1DCqeFNV04n5JrBe45sIqeLZLfXq7qvoFBD5nI5eflQM/viewform" target="_blank" rel="noopener" class="btn-register" style="font-size:0.82rem;padding:8px 18px;">✍️ Register Online</a>
+        <a href="tel:9392648991" class="btn btn-orange btn-sm">📞 9392648991</a>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1292,7 +1421,6 @@ function switchPhase(p) {
   document.querySelector(`.phase-tab[data-phase="${p}"]`).classList.add('active');
   document.getElementById(`phase-${p}`).classList.add('active');
   document.getElementById('progressBar').style.width = progressWidths[p];
-  // scroll modal body to top
   document.querySelector('.modal-body').scrollTop = 0;
 }
 </script>
